@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace WebVendasMvc.Models
@@ -26,6 +27,22 @@ namespace WebVendasMvc.Models
             BirthDate = birthDate;
             BaseSalary = baseSalary;
             Department = department;
+        }
+
+        public void AddSales(SalesRecord sr)
+        {
+            Sales.Add(sr);
+        }
+
+        public void RemoveSales(SalesRecord sr)
+        {
+            Sales.Remove(sr);
+        }
+
+        //Total de vendas em determinado período
+        public double TotalSales(DateTime initial, DateTime final)
+        {
+            return Sales.Where(sr => sr.Date >= initial && sr.Date <= final).Sum(sr => sr.Amount);
         }
 
     }
