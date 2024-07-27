@@ -1,4 +1,4 @@
-﻿
+﻿using System.Collections.Generic;
 
 namespace WebVendasMvc.Models
 {
@@ -6,5 +6,16 @@ namespace WebVendasMvc.Models
     {
         public int Id { get; set; }
         public int Name { get; set; }
+        public ICollection<Seller> Sellers { get; set; } = new List<Seller>();
+
+        public Department()
+        {
+        }
+
+        public Department(int id, int name)
+        {
+            Id = id;
+            Name = name;
+        }
     }
 }
