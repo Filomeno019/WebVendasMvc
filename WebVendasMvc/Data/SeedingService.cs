@@ -40,13 +40,13 @@ namespace WebVendasMvc.Data
 
             SalesRecord r1 = new SalesRecord(1, new DateTime(2018, 09, 25), 11000.0, SaleStatus.billed, s1);
 
-            _context.Department.AddRange(d1, d2, d3, d4);
+            //_context.Department.AddRange(d1, d2, d3, d4);
 
-            _context.Seller.AddRange(s1, s2, s3, s4);
+            //_context.Seller.AddRange(s1, s2, s3, s4);
 
-            _context.SalesRecord.AddRange(r1);
+            //_context.SalesRecord.AddRange(r1);
 
-            _context.SaveChanges();
+            //_context.SaveChanges();
         }
     }
 
