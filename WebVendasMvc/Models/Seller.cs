@@ -39,9 +39,13 @@ namespace WebVendasMvc.Models
             Sales.Remove(sr);
         }
 
-        //Total de vendas em determinado período
+        //Total de vendas em determinado período de tempo
         public double TotalSales(DateTime initial, DateTime final)
         {
+            //Foi utilizado o linq
+            //chamando a coleção Sales que seria a lista de venda de venda associadas com determinado vendedor
+            //where usado pra filtrar a lista de venda pra obter uma nova lista contendo apenas a lista no tempo especificado
+            //Feito a filtragem, entra a soma do sr que leva em sr amount pois quero a soma das vendas
             return Sales.Where(sr => sr.Date >= initial && sr.Date <= final).Sum(sr => sr.Amount);
         }
 

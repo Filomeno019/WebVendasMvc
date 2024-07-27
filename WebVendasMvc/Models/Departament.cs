@@ -27,6 +27,8 @@ namespace WebVendasMvc.Models
 
         public double TotalSales(DateTime initial, DateTime final)
         {
+            //Foi pego cada vendededor da lista chamando o totalSales do vendedor naquele período
+            // Inicial e final, e ai foi feito a soma do resultado pra todos os vendedores desse departamento
             return Sellers.Sum(seller => seller.TotalSales(initial, final));
         }
     }
